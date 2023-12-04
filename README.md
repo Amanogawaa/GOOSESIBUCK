@@ -7,6 +7,7 @@
 
 *note*
   - Not all the code is mine; it's my first time creating a system and my first experience using PHP
+  - current js knowledge (.1%)
   - forgot to put comments
   - polishing the UI to make more like `Starbucks (reference)`
 
