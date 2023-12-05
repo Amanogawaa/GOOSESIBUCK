@@ -26,13 +26,15 @@ if (isset($_GET['delete'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>admins accounts</title>
+    <title>Admin Accounts</title>
 
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="../css/admin_style.css">
+    <link rel="icon" href="https://c.files.bbci.co.uk/12B60/production/_109004667_02untitledgoosegamescreen3840x2160.png" type="image/x-icon">
+
 
 </head>
 
@@ -44,7 +46,7 @@ if (isset($_GET['delete'])) {
 
     <section class="accounts">
 
-        <h1 class="heading">admins account</h1>
+        <h1 class="heading">Admin Accounts</h1>
 
         <div class="box-container">
 
@@ -81,7 +83,6 @@ if (isset($_GET['delete'])) {
         </div>
 
     </section>
-
 
     <!-- custom js file link  -->
     <script src="../js/admin_script.js"></script>

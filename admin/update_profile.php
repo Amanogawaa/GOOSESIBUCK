@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
         $select_name = $conn->prepare("SELECT * FROM `admin` WHERE name = ?");
         $select_name->execute([$name]);
         if ($select_name->rowCount() > 0) {
-            $message[] = 'username already taken!';
+            $message[] = 'Username already taken!';
         } else {
             $update_name = $conn->prepare("UPDATE `admin` SET name = ? WHERE id = ?");
             $update_name->execute([$name, $admin_id]);
@@ -64,13 +64,15 @@ if (isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>profile update</title>
+    <title>Profile Update</title>
 
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="../css/admin_style.css">
+    <link rel="icon" href="https://c.files.bbci.co.uk/12B60/production/_109004667_02untitledgoosegamescreen3840x2160.png" type="image/x-icon">
+
 
 </head>
 
@@ -83,6 +85,7 @@ if (isset($_POST['submit'])) {
     <section class="form-container">
 
         <form action="" method="POST">
+            <a href="dashboard.php"><i class="fa-solid fa-arrow-left-long" id="back"></i></a>
             <h3>Update Profile</h3>
             <input type="text" name="name" maxlength="20" class="box" oninput="this.value = this.value.replace(/\s/g, '')" placeholder="<?= $fetch_profile['name']; ?>">
             <input type="password" name="old_pass" maxlength="20" placeholder="Enter your old password" class="box" oninput="this.value = this.value.replace(/\s/g, '')">

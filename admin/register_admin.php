@@ -23,14 +23,14 @@ if (isset($_POST['submit'])) {
     $select_admin->execute([$name]);
 
     if ($select_admin->rowCount() > 0) {
-        $message[] = 'username already exists!';
+        $message[] = 'Username already exists!';
     } else {
         if ($pass != $cpass) {
-            $message[] = 'confirm passowrd not matched!';
+            $message[] = 'Password not matched!';
         } else {
             $insert_admin = $conn->prepare("INSERT INTO `admin`(name, password) VALUES(?,?)");
             $insert_admin->execute([$name, $cpass]);
-            $message[] = 'new admin registered!';
+            $message[] = 'New admin added!';
         }
     }
 }
@@ -44,13 +44,15 @@ if (isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>register</title>
+    <title>Admin Register</title>
 
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="../css/admin_style.css">
+    <link rel="icon" href="https://c.files.bbci.co.uk/12B60/production/_109004667_02untitledgoosegamescreen3840x2160.png" type="image/x-icon">
+
 
 </head>
 

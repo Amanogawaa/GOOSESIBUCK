@@ -1,19 +1,19 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap");
 
 :root {
-  --main-color: #4834d4;
-  --red: #e74c3c;
-  --orange: #f39c12;
-  --black: #34495e;
+  --main-color: #3a6166;
+  --red: #f8311b;
+  --orange: #25545a;
+  --black: #333;
   --white: #fff;
   --light-bg: #f5f5f5;
   --light-color: #999;
   --border: 0.2rem solid var(--black);
-  --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  --box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 * {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Rubik", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -71,9 +71,12 @@ section {
 }
 
 .btn:hover,
-.delete-btn:hover,
 .option-btn:hover {
-  background-color: var(--black);
+  background-color: #132c30;
+}
+
+.delete-btn:hover {
+  background-color: #c91805;
 }
 
 .flex-btn {
@@ -119,7 +122,7 @@ section {
 
 .empty {
   border: var(--border);
-  border-radius: 0.5rem;
+  border-radius: 20px;
   background-color: var(--white);
   padding: 1.5rem;
   text-align: center;
@@ -157,10 +160,11 @@ section {
 }
 
 .form-container form h3 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   color: var(--black);
   text-transform: capitalize;
   margin-bottom: 1rem;
+  font-weight: 700;
 }
 
 .form-container form p {
@@ -210,12 +214,14 @@ section {
 
 .header .flex .logo span {
   color: var(--main-color);
+  font-weight: 700;
 }
 
 .header .flex .navbar a {
   margin: 0 1rem;
   font-size: 2rem;
-  color: var(--light-color);
+  color: var(--main-color);
+  font-weight: 700;
 }
 
 .header .flex .navbar a:hover {
@@ -225,12 +231,14 @@ section {
 .header .flex .icons > * {
   font-size: 2.5rem;
   cursor: pointer;
-  color: var(--light-color);
+  color: #fff;
   margin-left: 1.7rem;
+  font-weight: 500;
 }
 
 .header .flex .icons > *:hover {
-  color: var(--main-color);
+  background-color: #c91805;
+  color: #fff;
 }
 
 .header .flex .profile {
@@ -514,6 +522,31 @@ section {
 .message i {
   font-size: 2.5rem;
   color: #333;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #3a6166;
+}
+
+.meme .container {
+  border: 1px solid #25545a;
+  border-radius: 20px;
+  padding: 4rem;
+  margin: 3rem;
+}
+
+.meme .container img {
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid #132c30;
+}
+
+.meme p {
+  font-size: 18px;
 }
 
 /* media queries  */
