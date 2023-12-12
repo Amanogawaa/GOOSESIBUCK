@@ -1,5 +1,6 @@
 # GOOSESIBUCK
-*simple ordering system made with html, css, js and php(bulok)
+*simple ordering system made with html, css, js and php(bulok) - proceedural paradigm cuz i dunno OOP
+  - OOP project 
 
 *to use* 
   - go to sql folder and import to xampp
