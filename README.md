@@ -1,6 +1,5 @@
 # GOOSESIBUCK
-*simple ordering system made with html, css, js and php(bulok) - proceedural paradigm cuz i dunno OOP
-  - OOP project 
+Goosesibucks is a simple online food ordering system where user can order with a friendly-user interface.[built with HTML,CSS,JS and PHP]
 
 *to use* 
   - go to sql folder and import to xampp
@@ -8,6 +7,7 @@
 
 *note*
   - Not all the code is mine; it's my first time creating a system and my first experience using PHP
+  - Proceedural Paradigm, can't implement OOP coz the OOP is kinda vague.
   - current js knowledge (.1%)
   - forgot to put comments
   - polishing the UI to make more like `Starbucks (reference)`
