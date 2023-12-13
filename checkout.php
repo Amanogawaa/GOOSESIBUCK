@@ -56,7 +56,7 @@ if (isset($_POST['submit'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart</title>
+    <title>Checkout</title>
     <!-- swiper cdn -->
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <!-- font awesome cdn link  -->
@@ -102,7 +102,7 @@ if (isset($_POST['submit'])) {
                 }
                 ?>
                 <p class="grand-total"><span class="name">Grand total :</span><span class="price">$<?= $grand_total; ?></span></p>
-                <a href="cart.php" class="btn">Veiw cart</a>
+                <a href="cart.php" class="view-btn">Veiw cart</a>
             </div>
 
             <input type="hidden" name="total_products" value="<?= $total_products; ?>">

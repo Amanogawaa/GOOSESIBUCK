@@ -39,7 +39,7 @@ if (isset($_POST['add_product'])) {
             $insert_product = $conn->prepare("INSERT INTO `products`(name, category, price, image) VALUES(?,?,?,?)");
             $insert_product->execute([$name, $category, $price, $image]);
 
-            $message[] = 'new product added!';
+            $message[] = 'New Product Added!';
         }
     }
 }

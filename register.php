@@ -22,32 +22,36 @@ if (isset($_POST['submit'])) {
     $cpass = $_POST['cpass'];
     $cpass = filter_var($cpass, FILTER_SANITIZE_STRING);
 
-    $select_user = $conn->prepare("SELECT * FROM `users` WHERE email = ? OR number = ?");
-    $select_user->execute([$email, $number]);
-    $row = $select_user->fetch(PDO::FETCH_ASSOC);
 
-    if ($select_user->rowCount() > 0) {
-        $message[] = 'Email or number is already in used';
+    if (empty($name) || empty($email) || empty($number) || empty($pass) || empty($cpass)) {
+        $message[] = 'Please fill all the blank area';
     } else {
-        if ($pass != $cpass) {
-            $message[] = 'Password does not match';
-        } else {
-            $insert_user = $conn->prepare("INSERT INTO `users`(name, email, number, password) VALUES (?,?,?,?)");
-            $insert_user->execute([$name, $email, $number, $cpass]);
-            $confirm_user = $conn->prepare("SELECT * FROM `users` WHERE email = ? AND password = ?");
-            $confirm_user->execute([$email, $pass]);
 
-            if ($confirm_user->rowCount() > 0) {
-                $row = $confirm_user->fetch(PDO::FETCH_ASSOC);
-                $_SESSION['user_id'] = $row['id'];
-                $message[] = 'Registered Successfully!';
-                header("refresh:2;url=home.php");
+        $select_user = $conn->prepare("SELECT * FROM `users` WHERE email = ? OR number = ?");
+        $select_user->execute([$email, $number]);
+        $row = $select_user->fetch(PDO::FETCH_ASSOC);
+
+        if ($select_user->rowCount() > 0) {
+            $message[] = 'Email or number is already in used';
+        } else {
+            if ($pass != $cpass) {
+                $message[] = 'Password does not match';
+            } else {
+                $insert_user = $conn->prepare("INSERT INTO `users`(name, email, number, password) VALUES (?,?,?,?)");
+                $insert_user->execute([$name, $email, $number, $cpass]);
+                $confirm_user = $conn->prepare("SELECT * FROM `users` WHERE email = ? AND password = ?");
+                $confirm_user->execute([$email, $pass]);
+
+                if ($confirm_user->rowCount() > 0) {
+                    $row = $confirm_user->fetch(PDO::FETCH_ASSOC);
+                    $_SESSION['user_id'] = $row['id'];
+                    $message[] = 'Registered Successfully!';
+                    header("refresh:2;url=home.php");
+                }
             }
         }
     }
 }
-
-include 'components/add_cart.php';
 
 ?>
 
@@ -58,7 +62,7 @@ include 'components/add_cart.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>home</title>
+    <title>Signup</title>
 
     <!-- swiper cdn -->
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />

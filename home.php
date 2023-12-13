@@ -21,7 +21,7 @@ include 'components/add_cart.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>home</title>
+    <title>Home</title>
 
     <!-- swiper cdn -->
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
@@ -54,7 +54,7 @@ include 'components/add_cart.php';
                         <a href="menu.php" class="btn">See Menu</a>
                     </div>
                     <div class="image">
-                        <img src="images/drink/Cappuccino.png" alt="">
+                        <img src="images/drink/Cappuccino.jpg" alt="">
                     </div>
                 </div>
                 <div class="swiper-slide slide">
@@ -64,7 +64,7 @@ include 'components/add_cart.php';
                         <a href="menu.php" class="btn">See Menu</a>
                     </div>
                     <div class="image">
-                        <img src="images/breakfast/BaconCheddarEggSandwich.png" alt="">
+                        <img src="images/breakfast/BaconCheddarEggSandwich.jpg" alt="">
                     </div>
                 </div>
                 <div class="swiper-slide slide">
@@ -74,7 +74,7 @@ include 'components/add_cart.php';
                         <a href="menu.php" class="btn">See Menu</a>
                     </div>
                     <div class="image">
-                        <img src="images/lunch/HamSwissOnBaguette.png" alt="">
+                        <img src="images/lunch/HamSwissOnBaguette.jpg" alt="">
                     </div>
                 </div>
                 <div class="swiper-slide slide">
@@ -84,7 +84,7 @@ include 'components/add_cart.php';
                         <a href="menu.php" class="btn">See Menu</a>
                     </div>
                     <div class="image">
-                        <img src="images/bread/AppleCroissant.png" alt="">
+                        <img src="images/bread/AppleCroissant.jpg" alt="">
                     </div>
                 </div>
             </div>
@@ -100,23 +100,23 @@ include 'components/add_cart.php';
 
         <div class="box-slider">
 
-            <a href="category.php?category=drink" class="box">
-                <img src="images/drink/CaffeAmericano.png" alt="">
+            <a href="category.php?category=Drinks" class="box">
+                <img src="images/drink/CaffeAmericano.jpg" alt="">
                 <h3>Drinks</h3>
             </a>
 
-            <a href="category.php?category=breakfast" class="box">
-                <img src="images/breakfast/ChickenMapleButterSandwich.png" alt="">
+            <a href="category.php?category=Breakfast" class="box">
+                <img src="images/breakfast/ChickenMapleButterSandwich.jpg" alt="">
                 <h3>Breakfast</h3>
             </a>
 
-            <a href="category.php?category=lunch" class="box">
-                <img src="images/lunch/TomatoMozzarellaFocacciaPanini.png" alt="">
+            <a href="category.php?category=Lunch" class="box">
+                <img src="images/lunch/TomatoMozzarellaFocacciaPanini.jpg" alt="">
                 <h3>Lunch</h3>
             </a>
 
-            <a href="category.php?category=bread" class="box">
-                <img src="images/bread/Croissant-onGreen.png" alt="">
+            <a href="category.php?category=Bread" class="box">
+                <img src="images/bread/Croissant-onGreen.jpg" alt="">
                 <h3>Bread</h3>
             </a>
 
@@ -129,7 +129,6 @@ include 'components/add_cart.php';
         <h1 class="title">Menu</h1>
 
         <div class="box-container">
-
             <?php
             $select_products = $conn->prepare("SELECT * FROM `products`");
             $select_products->execute();

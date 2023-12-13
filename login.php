@@ -16,15 +16,19 @@ if (isset($_POST['submit'])) {
     $pass = $_POST['pass'];
     $pass = filter_var($pass, FILTER_SANITIZE_STRING);
 
-    $select_user = $conn->prepare("SELECT * FROM `users` WHERE email = ? AND password = ?");
-    $select_user->execute([$email, $pass]);
-    $row = $select_user->fetch(PDO::FETCH_ASSOC);
-    if ($select_user->rowCount() > 0) {
-        $_SESSION['user_id'] = $row['id'];
-        $message[] = 'Login Successfully';
-        header("refresh:1;url=home.php");
+    if (empty($email) || empty($pass)) {
+        $message[] = 'Please fill all the blank area';
     } else {
-        $message[] = 'Incorrect credentials';
+        $select_user = $conn->prepare("SELECT * FROM `users` WHERE email = ? AND password = ?");
+        $select_user->execute([$email, $pass]);
+        $row = $select_user->fetch(PDO::FETCH_ASSOC);
+        if ($select_user->rowCount() > 0) {
+            $_SESSION['user_id'] = $row['id'];
+            $message[] = 'Login Successfully';
+            header("refresh:1;url=home.php");
+        } else {
+            $message[] = 'Incorrect credentials';
+        }
     }
 }
 
@@ -39,7 +43,7 @@ include 'components/add_cart.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>home</title>
+    <title>Login</title>
 
     <!-- swiper cdn -->
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
@@ -58,14 +62,17 @@ include 'components/add_cart.php';
     <?php include 'components/user_header.php'; ?>
 
     <!-- register section -->
-    <div class="form-container">
-        <form action="" method="post">
-            <h1 class="title">Login</h1>
-            <input type="email" name="email" placeholder="Email" maxlength="50" class="box">
-            <input type="password" name="pass" placeholder="Password" maxlength="50" class="box" oninput="this.value = this.value.replace(/\s/g,'')">
-            <input type="submit" value="Login" name="submit" class="btn">
-            <p>Dont have an account? <a href="register.php">Register Now</a></p>
-        </form>
+    <div class="login">
+        <div class="login-container">
+            <form action="" method="post">
+                <h1 class="title">Login</h1>
+                <input type="email" name="email" placeholder="Email" maxlength="50" class="box">
+                <input type="password" name="pass" placeholder="Password" maxlength="50" class="box" oninput="this.value = this.value.replace(/\s/g,'')">
+                <input type="submit" value="Login" name="submit" class="btn">
+                <p>Dont have an account? <a href="register.php">Register Now</a></p>
+            </form>
+        </div>
+
     </div>
 
 

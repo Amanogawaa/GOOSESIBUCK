@@ -7,7 +7,7 @@ Goosesibucks is a simple online food ordering system where user can order with a
 
 *note*
   - Not all the code is mine; it's my first time creating a system and my first experience using PHP
-  - Proceedural Paradigm, can't implement OOP coz the OOP is kinda vague.
+  - Procedural Paradigm, can't implement OOP coz the OOP is kinda vague.
   - current js knowledge (.1%)
   - forgot to put comments
   - polishing the UI to make more like `Starbucks (reference)`

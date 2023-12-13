@@ -15,7 +15,6 @@ if (isset($message)) {
 
     <section class="flex">
         <a href="admin/admin_login.php" class="logo">GOOSESIBUCKS?</a>
-
         <nav class="navbar">
             <a href="home.php">Home</a>
             <a href="about.php">About</a>

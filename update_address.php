@@ -16,10 +16,14 @@ if (isset($_POST['submit'])) {
     $address = $_POST['street'] . ', ' . $_POST['house'] . ', ' . $_POST['building'] . ', ' . $_POST['barangay'] . ', ' . $_POST['city'];
     $address = filter_var($address, FILTER_SANITIZE_STRING);
 
-    $update_address = $conn->prepare("UPDATE `users` set address = ? WHERE id = ?");
-    $update_address->execute([$address, $user_id]);
+    if (empty($address)) {
+        $message[] = 'Please fill all the blank area';
+    } else {
+        $update_address = $conn->prepare("UPDATE `users` set address = ? WHERE id = ?");
+        $update_address->execute([$address, $user_id]);
 
-    $message[] = 'Address saved!';
+        $message[] = 'Address saved!';
+    }
 }
 
 include 'components/add_cart.php';
@@ -33,7 +37,7 @@ include 'components/add_cart.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>home</title>
+    <title>Update</title>
 
     <!-- swiper cdn -->
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
